@@ -1,0 +1,29 @@
+nodes:
+    #Rancher-2 MASTER
+  - address: 163.107.93.221
+    internal_address: 10.250.64.6
+    user: ubuntu
+    role: [controlplane, etcd]
+    #Rancher-1 WORKER
+  - address: 163.107.83.167
+    internal_address: 10.250.64.5
+    user: ubuntu
+    role: [worker]
+    #Rancher-0 WORKER
+  - address: 163.107.93.216
+    internal_address: 10.250.64.4
+    user: ubuntu
+    role: [worker]
+
+services:
+  etcd:
+    snapshot: true
+    creation: 6h
+    retention: 24h
+
+# Required for external TLS termination with
+# ingress-nginx v0.22+
+ingress:
+  provider: nginx
+  options:
+    use-forwarded-headers: "true"
