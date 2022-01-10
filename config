@@ -1,19 +1,19 @@
 # Read more about SSH config files: https://linux.die.net/man/5/ssh_config
 
 #Rancher-2
-Host 163.107.93.221 
+Host 163.107.93.221
     HostName 163.107.93.221
     User root
-    IdentityFile /home/paya/.ssh/key
+    IdentityFile /root/.ssh/key
 
 #Rancher-1
 Host 163.107.83.167
     HostName 163.107.83.167
     User root
-    IdentityFile /home/paya/.ssh/key
+    IdentityFile /root/.ssh/key
 
 #Rancher-0
 Host 163.107.93.216
     HostName 163.107.93.216
     User root
-    IdentityFile /home/paya/.ssh/key
+    IdentityFile /root/.ssh/key
